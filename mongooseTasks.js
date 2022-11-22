@@ -1,15 +1,15 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1:27017/test')
+mongoose.connect('mongodb://127.0.0.1:27017/test1')
+var Val = require("./models/valo").Val
 
-var schema = mongoose.Schema({ name: String })
 
-schema.methods.meow = function(){
-    console.log(this.get("name") + " shouted 'You want to play? Lets play' ")
-}
+var val = new Val({
+title: "Chamber",
+nick: "chamber2"
+})
 
-var Val = mongoose.model('Val', schema)
 
-var jdm = new Val({ name: 'Chamber' })
-jdm.save(function (err) {
-    jdm.meow()
+console.log(val)
+val.save(function(err, val, affected){
+console.log(val.title)
 })
