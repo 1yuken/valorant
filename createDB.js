@@ -10,8 +10,8 @@ async function run() {
         database.dropDatabase()
         database = client.db("valorant");
         const valo = database.collection("valo");
-        const result = await valo.insertOne({name:"Chamber"});
-        console.log(`${result} documents were inserted`);
+        const result = await valo.insertMany(data);
+        console.log(`${result.insertedCount} documents were inserted`);
     } finally {
         await client.close();
     }
