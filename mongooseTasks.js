@@ -5,7 +5,7 @@ var Val = require("./models/valo").Val
 
 var val = new Val({
 title: "Chamber",
-nick: "chamber2"
+nick: "chamber"
 })
 
 
