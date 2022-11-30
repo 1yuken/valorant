@@ -16,8 +16,8 @@ var data = [{
         avatar: '/images/Sage.jpg',
         desc: 'Sage is a VALORANT agent, whose abilities make her a key support in the game. Sage equips various orbs which can slow enemies, heal allies, or erect walls to control the battlefield. Her ultimate, Resurrection, can even bring dead allies back to life, swinging the balance of power in a match in seconds.'
         }
-];
+        ];
     
     
-module.exports.data = data;
+        module.exports.data = data;
     

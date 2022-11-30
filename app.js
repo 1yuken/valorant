@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/valorant')
+mongoose.connect('mongodb://127.0.0.1:27017/valorant')
 var game = require('./routes/game');
 
 var indexRouter = require('./routes/index');
@@ -40,7 +40,10 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error',
+  {
+    title: 'Ошибка, проверьте корректность запроса.'
+  });
 });
 
 module.exports = app;

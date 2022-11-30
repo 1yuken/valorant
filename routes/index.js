@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* Страница Чембера */
+/* Страница Чембера 
 router.get('/chamber', function(req, res, next) {
   res.render('valo', {
     title: "Chamber",
@@ -14,8 +14,9 @@ router.get('/chamber', function(req, res, next) {
     desc: "Chamber is one of four Agents in VALORANT that serve the role of Sentinel. These Agents focus on defensive play through recon, healing, and similar abilities. Chamber sets himself apart from the other Sentinels by packing an equally powerful punch on offense."
 });
 });
+*/
 
-/* Страница Джетт */
+/* Страница Джетт
 router.get('/jett', function(req, res, next) {
   res.render('valo', {
     title: "Jett",
@@ -23,8 +24,9 @@ router.get('/jett', function(req, res, next) {
     desc: "Representing her home country of South Korea, Jett's agile and evasive fighting style lets her take risks no one else can. She runs circles around every skirmish, cutting enemies before they even know what hit them."
 });
 });
+*/
 
-/* Страница Сейдж */
+/* Страница Сейдж 
 router.get('/sage', function(req, res, next) {
   res.render('valo', {
     title: "Sage",
@@ -32,6 +34,6 @@ router.get('/sage', function(req, res, next) {
     desc: "Sage is a VALORANT agent, whose abilities make her a key support in the game. Sage equips various orbs which can slow enemies, heal allies, or erect walls to control the battlefield. Her ultimate, Resurrection, can even bring dead allies back to life, swinging the balance of power in a match in seconds."
 });
 });
-
+*/
 
 module.exports = router;
