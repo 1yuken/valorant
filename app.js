@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/valorant')
-var game = require('./routes/game');
+var agents = require('./routes/agents');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/game', game);
+app.use('/agents', agents);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -42,6 +42,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error',
   {
+    picture: "../images/error.png",
     title: 'Ошибка, проверьте корректность запроса.'
   });
 });

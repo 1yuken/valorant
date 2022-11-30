@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 
-var valSchema = new Schema({
+var agentSchema = new Schema({
 title: String,
 nick: {
 type: String,
@@ -16,4 +16,4 @@ type:Date,
 default:Date.now
 }
 })
-module.exports.Val = mongoose.model("Val", valSchema)
+module.exports.Agent = mongoose.model("Agent", agentSchema)
