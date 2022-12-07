@@ -4,8 +4,8 @@ var Agent = require("../models/agent").Agent
 
 
 var agent = new Agent({
-title: "Supra",
-nick: "supraa70"
+title: "chamber",
+nick: "chamber"
 })
 
 

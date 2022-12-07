@@ -7,6 +7,7 @@ var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/valorant')
 var session = require("express-session")
 var agents = require('./routes/agents');
+var Agent = require("./models/agent").Agent
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -37,6 +38,17 @@ app.use(function(req,res,next){
   next()
 })
 
+app.use(function(req,res,next){
+  res.locals.nav = []
+
+  Agent.find(null,{_id:0,title:1,nick:1},function(err,result){
+      if(err) throw err
+      res.locals.nav = result
+      next()
+  })
+})
+
+app.use(require("./middleware/createMenu.js"))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
