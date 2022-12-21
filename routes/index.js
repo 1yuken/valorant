@@ -22,6 +22,13 @@ router.get('/logreg', function (req, res, next) {
     res.render('logreg', { title: 'Вход', error: null });
   });
   
+  /* POST logout. */
+router.post('/logout', function(req, res, next) {
+    req.session.destroy()
+    res.locals.user = null
+    res.redirect('/')
+});
+
   
   /* POST login/registration page. */
   router.post('/logreg', function (req, res, next) {
