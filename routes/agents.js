@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var checkAuth = require("./../middleware/checkAuth.js");
 var Agent = require("../models/agent").Agent
-var async = require("async")
+// var async = require("async")
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -9,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* Страница агентов */
-router.get('/:nick', function(req, res, next) {
+router.get('/:nick',checkAuth, function(req, res, next) {
     Agent.findOne({nick:req.params.nick}, function(err,agent){
         if(err) return next(err)
         if(!agent) return next(new Error("Нет такого агента в valorant"))
