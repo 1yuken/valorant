@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1/test1')
+mongoose.connect('mongodb://127.0.0.1/valorant')
 var Agent = require("../models/agent").Agent
 
 

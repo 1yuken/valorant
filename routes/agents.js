@@ -7,7 +7,7 @@ var db = require('../mySQLConnect.js');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('Новый маршрутизатор, для маршрутов, начинающихся с agent');
+  res.send('Новый маршрутизатор, для маршрутов, начинающихся agent');
 });
 
 /* Страница агентов */
