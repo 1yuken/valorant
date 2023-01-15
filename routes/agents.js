@@ -11,18 +11,32 @@ router.get('/', function(req, res, next) {
 });
 
 /* Страница агентов */
-router.get('/:nick', function(req, res, next) {
-    Agent.findOne({nick:req.params.nick}, function(err,agent){
-        if(err) return next(err)
-        if(!agent) return next(new Error("Нет такого агента в valorant"))
-        res.render('agent', {
-          title: agent.title,
-          picture: agent.avatar,
-          desc1: agent.desc1,
-          desc2: agent.desc2,
-          desc3: agent.desc3,
-        })
-    })
+router.get("/:nick", function(req, res, next) {
+  db.query(`SELECT * FROM agents WHERE agents.nick = '${req.params.nick}'`, (err, agents) => {
+  if(err) {
+  console.log(err);
+  if(err) return next(err)
+  } else {
+  if(agents.length == 0) return next(new Error("There was no such agent in valorant, maybe you made a mistake in your request?"))
+  var agent = agents[0];
+  res.render('agent', {
+  title: agent.title,
+  picture: agent.avatar,
+  desc: agent.about
   })
+  // result(null, results);
+  }
+  })
+  // Cat.findOne({nick:req.params.nick}, function(err, cat){
+  // if(err) return next(err)
+  // if(!cat) return next(new Error("Нет такого котенка в этом мультике"))
+  // res.render('cat', {
+  // title: cat.title,
+  // picture: cat.avatar,
+  // desc: cat.desc,
+  // });
+  // })
+  });
   
-module.exports = router
+    module.exports = router
+    
