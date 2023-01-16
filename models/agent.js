@@ -16,4 +16,4 @@ type:Date,
 default:Date.now
 }
 })
-module.exports.Agent = mongoose.model("Agent", agentSchema)
+module.exports.Agent = mongoose.model("agents", agentSchema)

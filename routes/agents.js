@@ -17,9 +17,7 @@ router.get('/:nick',checkAuth, function(req, res, next) {
         res.render('agent', {
           title: agent.title,
           picture: agent.avatar,
-          desc1: agent.desc1,
-          desc2: agent.desc2,
-          desc3: agent.desc3,
+          desc: agent.desc
         })
     })
   })
