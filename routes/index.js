@@ -1,7 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var Agent = require("../models/agent").Agent
-var User = require("./../models/user").User
+var db = require("../mySQLConnect.js");
 
 
 /* GET home page. */

@@ -73,6 +73,7 @@ app.use(function(req,res,next){
   })
 })
 
+app.use(require("./middleware/createMenu.js"))
 app.use(require("./middleware/createUser.js"))
 
 app.use('/', indexRouter);
@@ -95,7 +96,8 @@ app.use(function(err, req, res, next) {
   res.render('error',
   {
     picture: "../images/error.png",
-    title: 'Ошибка, проверьте корректность запроса.'
+    title: 'Ошибка, проверьте корректность запроса.',
+    menu: []
   });
 });
 
